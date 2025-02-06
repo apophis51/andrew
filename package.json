@@ -1,0 +1,17 @@
+{
+  "name": "andrew",
+  "version": "1.0.0",
+  "author": "",
+  "main": "index.js",
+  "devDependencies": {
+    "jasmine": "^5.5.0",
+    "nodemon": "^3.1.9"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "scripts": {
+    "test": "jasmine",
+    "watch": "nodemon --exec 'npm test' -- ext --watch spec/*.js"
+  }
+}

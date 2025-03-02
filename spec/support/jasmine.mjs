@@ -8,7 +8,7 @@ export default {
   ],
   env: {
     stopSpecOnExpectationFailure: false,
-    random: true,
+    random: false, //changed
     forbidDuplicateNames: true
   }
 }

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "",
   "main": "index.js",
+  "type": "module",
   "devDependencies": {
     "jasmine": "^5.5.0",
     "nodemon": "^3.1.9"
@@ -12,6 +13,8 @@
   "license": "ISC",
   "scripts": {
     "test": "jasmine",
-    "watch": "nodemon --exec 'npm test' -- ext --watch spec/*.js"
+    "testPassWordCalculator": "jasmine spec/calculatorPasswordSpec.js",
+    "watch": "nodemon --exec 'npm test' -- ext --watch spec/*.js",
+    "watch2": "nodemon --exec 'npm run testPassWordCalculator' --ext js spec/calculatorPasswordSpec.js"
   }
 }

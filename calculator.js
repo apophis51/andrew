@@ -36,4 +36,50 @@ function divide(a,b) {
     return a / b
 }
 
-module.exports = { add, subtract, multiply, divide };
+class AdvancedCalculator {
+    constructor() {
+      this.memory = 0;
+    }
+  
+    multiply(a, b) {
+      return a * b;
+    }
+  
+    divide(a, b) {
+      if (b === 0) throw new Error('Division by zero');
+      return a / b;
+    }
+  
+    remember(value) {
+      this.memory = value;
+    }
+  
+    recall() {
+      return this.memory;
+    }
+  }
+
+
+  class Calculator {
+    constructor(initialValue = 0) {
+      this.value = initialValue;
+    }
+  
+    add(number) {
+      this.value += number;
+      return this.value;
+    }
+  
+    subtract(number) {
+      this.value -= number;
+      return this.value;
+    }
+  
+    getValue() {
+      return this.value;
+    }
+  }
+
+export { add, subtract, multiply, divide, AdvancedCalculator, Calculator };
+
+

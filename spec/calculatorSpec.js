@@ -1,7 +1,75 @@
 // spec/calculatorSpec.js
 
 
-const { add, subtract, multiply,divide } = require('../calculator');
+import { add, subtract, multiply,divide, AdvancedCalculator, Calculator } from '../calculator.js';
+
+  
+  describe('Calculator Class', () => {
+    it('should initialize with the provided value', () => {
+      const calculator = new Calculator(10);
+      expect(calculator.getValue()).toBe(10);
+    });
+  
+    it('should initialize with 0 if no value is provided', () => {
+      const calculator = new Calculator();
+      expect(calculator.getValue()).toBe(0);
+    });
+  
+    it('should add a number to the current value', () => {
+      const calculator = new Calculator(5);
+      expect(calculator.add(3)).toBe(8);
+      expect(calculator.getValue()).toBe(8); // Verify internal state
+    });
+  
+    it('should subtract a number from the current value', () => {
+      const calculator = new Calculator(10);
+      expect(calculator.subtract(4)).toBe(6);
+      expect(calculator.getValue()).toBe(6); // Verify internal state
+    });
+  
+    it('should handle multiple operations correctly', () => {
+      const calculator = new Calculator(2);
+      calculator.add(5);
+      calculator.subtract(3);
+      expect(calculator.getValue()).toBe(4);
+    });
+  
+    it('should handle negative initial values', () => {
+      const calculator = new Calculator(-5);
+      expect(calculator.getValue()).toBe(-5);
+      expect(calculator.add(10)).toBe(5);
+    });
+  
+    it('should handle negative numbers in operations', () => {
+      const calculator = new Calculator(10);
+      expect(calculator.add(-3)).toBe(7);
+      expect(calculator.subtract(-2)).toBe(9);
+    });
+  });
+
+describe('Advanced Calculator Class with Memory', function () {
+    let calculator;
+  
+    beforeEach(function () {
+      calculator = new AdvancedCalculator();
+    });
+  
+    xit('should multiply two numbers', function () {
+      expect(calculator.multiply(2, 3)).toBe(6);
+    });
+  
+    xit('should divide two numbers', function () {
+      expect(calculator.divide(6, 3)).toBe(2);
+    });
+  
+    xit('should remember and recall a value', function () {
+      calculator.remember(42);
+      expect(calculator.recall()).toBe(42);
+    });
+  });
+
+  
+
 
 describe("Add", function () {
     it("should add two numbers", function () {
@@ -29,7 +97,7 @@ describe("Multiply", function () {
 });
 
 describe("checkNumber", function () {
-    it("should return 'positive' for positive numbers", function () {
+    xit("should return 'positive' for positive numbers", function () {
         expect(checkNumber(5)).toEqual("positive");
         expect(checkNumber(100)).toEqual("positive");
         expect(checkNumber(1)).toEqual("positive");

@@ -1,0 +1,54 @@
+
+.calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(195, 194, 194);
+    margin: 30px;
+    border: 3px solid orangered;
+    padding: 9px;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30px;
+    background: white;
+    color: #5e2b17;
+    margin-bottom: 12px;
+    border: 3px solid orangered;
+    padding: 6px;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.control-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.control-matrix > div {
+    display: flex;
+    gap: 3px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(198, 151, 71);
+    color: white;
+    border: 3px outset orangered;
+    font-size: 16px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+button:active {
+    border-style: inset;
+}

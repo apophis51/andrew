@@ -10,8 +10,6 @@ or
 npm run watch
 
 
-
-
 # To Build This from Scratch
 
 npm init -y

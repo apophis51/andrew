@@ -12,9 +12,16 @@
   "keywords": [],
   "license": "ISC",
   "scripts": {
+    "start": "nodemon server/server.js",
     "test": "jasmine",
     "testPassWordCalculator": "jasmine spec/calculatorPasswordSpec.js",
+    "testServer": "jasmine spec/serverSpec.js",
     "watch": "nodemon --exec 'npm test' -- ext --watch spec/*.js",
-    "watch2": "nodemon --exec 'npm run testPassWordCalculator' --ext js spec/calculatorPasswordSpec.js"
+    "watch2": "nodemon --exec 'npm run testPassWordCalculator' --ext js spec/calculatorPasswordSpec.js",
+    "watch3": "PORT=4000 nodemon --exec 'npm run testServer' --ext js spec/serverSpec.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "supertest": "^7.0.0"
   }
 }

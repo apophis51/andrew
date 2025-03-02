@@ -1,7 +1,7 @@
 import { Calculator } from '../calculatorPassword.js';
 
   
-  describe('Calculator Password Class', () => {
+  describe('Protected Calculator', () => {
     it('should have user enter a unique password', () => {
         const calculator = new Calculator(13, "DFSGED");
         expect(calculator.password).not.toEqual("1234");

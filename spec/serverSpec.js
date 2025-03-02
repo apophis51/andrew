@@ -9,7 +9,13 @@ describe('Express API Tests', () => {
     expect(response.status).toBe(200);
     expect(response.body).toEqual({ message: 'Hello, world!' });
   });
+  it('GET /add-page should return the add.html file', async () => {
+    const response = await request(app).get('/add-page');
+    expect(response.status).toBe(200);
+    expect(response.headers['content-type']).toContain('html');
+    expect(response.text).toContain('<title>Sum Calculator</title>');  
 
+  });
   it('POST /add should return the sum of two numbers', async () => {
     const response = await request(app)
       .post('/add')

@@ -16,9 +16,6 @@ app.get('/add-page', (req, res) => {
   res.sendFile(path.resolve('frontend/add.html'));
 });
 
-app.get('/calculator', (req, res) => {
-  res.sendFile(path.resolve('frontend/calculator.html'));
-});
 
 app.post('/add', (req, res) => {
   const { num1, num2 } = req.body;

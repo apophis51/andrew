@@ -12,7 +12,7 @@ class Calculator {
       return this.value;
     }
   
-    subtract(number) {
+    subtract() {
   
     }
   
@@ -31,7 +31,12 @@ class Calculator {
   console.log(JSON.parse(JSON.stringify(Calculator2)).value);
 
 
+  setTimeout(() => {
+    Calculator2.value = 100;  // This direct mutation is unnoticed and changes state unexpectedly
+    console.log("Unexpected mutation occurred:", Calculator2.getValue());  // Unexpected output: 100
+}, 1);
 
+console.log("State before unexpected mutation:", Calculator2.getValue());
 
 
   class CalculatorFunctional {
@@ -64,6 +69,10 @@ class Calculator {
   const result = calc1.add(10);  // Returns a new instance with value 15
   console.log(result.getValue());  // 
 
+  
+  calc1.value = 100;  // This direct mutation is unnoticed and changes state unexpectedly
+
+  console.log(calc1.getValue())
 
   const newResult = calc1.add(20);  // Returns a new instance with value 25
   console.log(newResult.getValue());

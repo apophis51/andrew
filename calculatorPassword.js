@@ -1,5 +1,7 @@
 
 class Calculator {
+
+
     constructor(initialValue = 0, userPassword = "1234") {
        this.value = initialValue;
        this.calculatorBrand = "samsung"
@@ -62,6 +64,7 @@ console.log("State before unexpected mutation:", Calculator2.getValue());
     }
   }
   
+
   // Usage
   const calc1 = new CalculatorFunctional(5);
   console.log(calc1.getValue());  // 5
@@ -80,18 +83,66 @@ console.log("State before unexpected mutation:", Calculator2.getValue());
 
   console.log(calc1.getValue());  // 5
   
-  
-
-
 
 
 const newMultiply = (x,y) => x * y
 const newAdd = (x,y) => x + y
-
-
 const addAndMultiply = (x,y) => newMultiply(newAdd(x,y), newAdd(x,y))
-
 console.log(addAndMultiply(2,2))
+
+
+
+  /////////////Monad
+
+  class Identity {
+    constructor(value) {
+      this.value = value;
+    }
+  
+    map(fn) {
+      return new Identity(fn(this.value));
+    }
+  }
+  
+  // Actual add function
+  function add(x, y) {
+    return x + y;
+  }
+  
+  // Actual subtract function
+  function subtract(x, y) {
+    return x - y;
+  }
+  
+  // Usage:
+  const initialValue = 10;
+  const results = new Identity(initialValue)
+    .map((x) => add(x, 5)) // Add 5
+    .map((x) => subtract(x, 3)); // Subtract 3
+  
+  console.log(results.value); // 12
+
+
+
+  function add2(x, y) {
+    return x + y;
+  }
+  
+  function subtract2(x, y) {
+    return x - y;
+  }
+  
+  
+  let value2 = subtract2(20, add2(10, 5)); // Add 5
+  
+  console.log(value2); // 12
+
+
+
+
+
+
+
 
 
 
@@ -154,6 +205,34 @@ function processOrders1(orders) {
 orders = processOrders1(orders);
 
 console.log(orders);
+
+
+
+
+/////////////RECURSION
+
+function factorialRecursive(n) {
+  if (n === 0 || n === 1) {
+      return 1;
+  }
+  return n * factorialRecursive(n - 1);
+}
+
+console.log(factorialRecursive(5)); // Output: 120
+
+
+
+
+function factorialIterative(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+      result *= i;
+  }
+  return result;
+}
+
+console.log(factorialIterative(0)); // Output: 120
+
 
 
 

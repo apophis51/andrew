@@ -25,3 +25,9 @@ In package.json add this:
     "watch": "nodemon --exec 'npm test' -- ext --watch spec/*.js"
   }
 ```
+
+# Install Neo4J
+
+- make a free account on [Neo4j Aura] (https://neo4j.com/product/auradb/)
+
+- `npm install express neo4j-driver dotenv`

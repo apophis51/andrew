@@ -21,7 +21,9 @@
     "watch3": "PORT=4000 nodemon --exec 'npm run testServer' --ext js spec/serverSpec.js"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "neo4j-driver": "^5.28.1",
     "supertest": "^7.0.0"
   }
 }

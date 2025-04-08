@@ -121,6 +121,12 @@ app.get("/restaurants", async (req, res) => {
       res.status(500).json({ error: "Failed to add rating" });
     }
   });
+
+  // Sample API route
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from Express!' });
+});
+
   
 
 // Start server
